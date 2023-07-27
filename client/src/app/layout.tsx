@@ -9,13 +9,13 @@ import AuthModal from "@/components/auth/AuthModal";
 import ContextProvider from "@/context/ContextProvider";
 
 export const metadata = {
-  title: "catur amikom",
-  description: "Play Chess online.",
+  title: "chesskami",
+  description: "Main Catur online.",
   openGraph: {
-    title: "caturweb",
-    description: "Play Chess online.",
-    url: "https://ches.su",
-    siteName: "caturweb",
+    title: "chesskami",
+    description: "Main Catur online.",
+    url: "https://chesskami.vercel.app",
+    siteName: "chesskami",
     locale: "en_US",
     type: "website"
   },
@@ -33,7 +33,7 @@ export const metadata = {
     apple: { url: "/apple-touch-icon.png", sizes: "180x180" }
   },
   manifest: "/site.webmanifest",
-  metadataBase: new URL(process.env.VERCEL ? "https://ches.su" : "http://localhost:3000")
+  metadataBase: new URL(process.env.VERCEL ? "https://chesskami.vercel.app" : "http://localhost:3000")
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

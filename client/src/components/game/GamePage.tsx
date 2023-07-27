@@ -59,7 +59,7 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
   const [chatMessages, setChatMessages] = useState<Message[]>([
     {
       author: {},
-      message: `Welcome! You can invite friends to watch or play by sharing the link above. Have fun!`
+      message: `Selamat datang! Anda dapat mengundang teman untuk menonton atau bermain dengan membagikan tautan di atas. Selamat bersenang-senang!`
     }
   ]);
   const chatListRef = useRef<HTMLUListElement>(null);
@@ -368,10 +368,10 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {lobby.black?.name || "(no one)"}
+          {lobby.black?.name || "(tidak ada)"}
         </a>
         <span className="flex items-center gap-1 text-xs">
-          black
+          hitam
           {lobby.black?.connected === false && (
             <span className="badge badge-xs badge-error">disconnected</span>
           )}
@@ -389,10 +389,10 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {lobby.white?.name || "(no one)"}
+          {lobby.white?.name || "(tidak ada)"}
         </a>
         <span className="flex items-center gap-1 text-xs">
-          white
+          Putih
           {lobby.white?.connected === false && (
             <span className="badge badge-xs badge-error">disconnected</span>
           )}
@@ -408,7 +408,7 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
   }
 
   function copyInvite() {
-    const text = `https://ches.su/${lobby.endReason ? `archive/${lobby.id}` : initialLobby.code}`;
+    const text = `https://chesskami.vercel.app/${lobby.endReason ? `archive/${lobby.id}` : initialLobby.code}`;
     if ("clipboard" in navigator) {
       navigator.clipboard.writeText(text);
     } else {
@@ -534,7 +534,7 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
                   className={"btn btn-secondary" + (playBtnLoading ? " btn-disabled" : "")}
                   onClick={clickPlay}
                 >
-                  Play as {lobby.white?.id ? "black" : "white"}
+                  Bermain sebagai {lobby.white?.id ? "hitam" : "putih"}
                 </button>
               )}
             </div>
@@ -574,7 +574,7 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
 
           <div className="flex flex-1 flex-col gap-1">
             <div className="mb-2 flex w-full flex-col items-end gap-1">
-              {lobby.endReason ? "Archived link:" : "Invite friends:"}
+              {lobby.endReason ? "Tautan yang diarsipkan:" : "Mengundang teman-teman:"}
               <div
                 className={
                   "dropdown dropdown-top dropdown-end" + (copiedLink ? " dropdown-open" : "")
@@ -586,10 +586,10 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
                   onClick={copyInvite}
                 >
                   <IconCopy size={16} />
-                  ches.su/{lobby.endReason ? `archive/${lobby.id}` : initialLobby.code}
+                  chesskami.vercel.app/{lobby.endReason ? `archive/${lobby.id}` : initialLobby.code}
                 </label>
                 <div tabIndex={0} className="dropdown-content badge badge-neutral text-xs shadow">
-                  copied to clipboard
+                  disalin ke papan klip
                 </div>
               </div>
             </div>
@@ -667,7 +667,7 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    ches.su/archive/{lobby.id}
+                    chesskami.vercel.app/archive/{lobby.id}
                   </a>
                   .
                 </div>
@@ -737,7 +737,7 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
             <form className="input-group mt-auto" onSubmit={chatClickSend}>
               <input
                 type="text"
-                placeholder="Chat here..."
+                placeholder="Mengobrol di sini..."
                 className="input input-bordered flex-grow"
                 name="chatInput"
                 id="chatInput"
@@ -745,7 +745,7 @@ export default function GamePage({ initialLobby }: { initialLobby: Game }) {
                 required
               />
               <button className="btn btn-secondary ml-1" type="submit">
-                send
+                kirim
               </button>
             </form>
           </div>

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: { name: string } })
     openGraph: {
       title: `${data.name} | chessu`,
       description: `${data.name}'s profile on chessu`,
-      url: `https://ches.su/user/${data.name}`,
+      url: `https://chesskami.vercel.app/user/${data.name}`,
       siteName: "chessu",
       locale: "en_US",
       type: "website"
@@ -80,7 +80,7 @@ export default async function Profile({ params }: { params: { name: string } }) 
                 <div className="flex w-72 justify-between">
                   <div className="flex flex-col">
                     <span className="flex items-center gap-1 text-sm">
-                      White
+                      Putih
                       {game.winner === "white" && (
                         <span className="badge badge-xs badge-success">winner</span>
                       )}

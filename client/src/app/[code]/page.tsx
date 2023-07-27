@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: { params: { code: string } })
     };
   }
   return {
-    description: `Play or watch a game with ${game.host?.name}`,
+    description: `Main atau Nonton permainan dengan ${game.host?.name}`,
     openGraph: {
       title: "chessu",
-      description: `Play or watch a game with ${game.host?.name}`,
-      url: `https://ches.su/${game.code}`,
+      description: `Main atau Nonton permainan dengan ${game.host?.name}`,
+      url: `https://chesskami.vercel.app/${game.code}`,
       siteName: "chessu",
       locale: "en_US",
       type: "website"

@@ -25,7 +25,7 @@ export default function JoinGame() {
 
     setButtonLoading(true);
 
-    if (code.startsWith("ches.su")) {
+    if (code.startsWith("chesskami.vercel.app")) {
       code = "http://" + code;
     }
     if (code.startsWith("http")) {
